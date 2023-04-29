@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/04/29 05:33:57 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/04/29 05:46:38 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,16 @@ int	ft_conver(va_list args, const char conv)
 	else if (conv == '%')
 		len += ft_percent(); // do function print percent
 	return (len);
+}
+
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
+
+	va_start(args, str);
+	while (str[])
+	{
+	}
+	va_end(args);
+	return ();
 }
