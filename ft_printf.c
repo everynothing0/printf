@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/04/29 05:46:38 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/04/29 19:04:21 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_putchar(int c)
 
 int	ft_conver(va_list args, const char conv)
 {
-	int	len;
+	int	len; // or delete
 
-	len = 0;
-	if (conv == 'c')
+	len = 0; // or delete and replace with add return 
+	if (conv == 'c') // return (ft_putchar(va_arg(args, int))); 
 		len += ft_putchar(va_arg(args, int)); // va_arg to review
 	else if (conv == 's')
 		len += ft_putstr(va_arg(args, char *)); // add putstr
