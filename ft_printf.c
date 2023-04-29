@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/04/29 05:14:17 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/04/29 05:33:57 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,11 @@ int	ft_conver(va_list args, const char conv)
 		len += ft_ptr(va_arg(args, unsigned long long)); //rename
 	else if (conv == 'd' || conv == 'i')
 		len += ft_putnbr_base(va_arg(args, int)); // learn putnbrbase
-	else if 
+	else if (conv == 'u')
+		len += ft_unsigned(va_arg(args, unsigned int)) // function ft_unsigned
+	else if (conv == 'x' || conv == 'X')
+		len += ft_hexi(va_arg(args, unsigned int)) // function hexi
+	else if (conv == '%')
+		len += ft_percent(); // do function print percent
+	return (len);
 }
