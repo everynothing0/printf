@@ -6,14 +6,14 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/04/29 19:04:21 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/03 22:31:32 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "printf.h"
 
-int	ft_putchar(int c)
+int	ft_putcharr(int c)
 {
 	write(1, &c, 1);
 	return (1);
@@ -25,7 +25,7 @@ int	ft_conver(va_list args, const char conv)
 
 	len = 0; // or delete and replace with add return 
 	if (conv == 'c') // return (ft_putchar(va_arg(args, int))); 
-		len += ft_putchar(va_arg(args, int)); // va_arg to review
+		len += ft_putcharr(va_arg(args, int)); // va_arg to review
 	else if (conv == 's')
 		len += ft_putstr(va_arg(args, char *)); // add putstr
 	else if (conv == 'p')
@@ -44,10 +44,15 @@ int	ft_conver(va_list args, const char conv)
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
+	int	i;
 
 	va_start(args, str);
-	while (str[])
+	while (str[i])
 	{
+		if (str[i] == '%')
+		{
+			ft_conver
+		}
 	}
 	va_end(args);
 	return ();
