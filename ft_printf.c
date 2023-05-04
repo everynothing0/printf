@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/03 22:38:22 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/04 22:56:29 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int	ft_printf(const char *str, ...)
 	int	i;
 	int	leng;
 
+	i = 0;
+	leng = 0;
+	if (str == NULL)
+		return (0);
 	va_start(args, str);
 	while (str[i])
 	{
@@ -57,5 +61,5 @@ int	ft_printf(const char *str, ...)
 		}
 	}
 	va_end(args);
-	return ();
+	return (leng);
 }
