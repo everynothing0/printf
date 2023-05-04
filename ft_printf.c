@@ -6,18 +6,18 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/04 22:56:29 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/04 23:01:39 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "printf.h"
 
-int	ft_putcharr(int c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+//int	ft_putcharr(int c)
+//{
+//	write(1, &c, 1);
+//	return (1);
+//}
 
 int	ft_conver(va_list args, const char conv)
 {
@@ -56,6 +56,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
+			// or ft_conv(str, i, args, &cnt);
 			leng += ft_conver(args + str[i + 1]);
 			i += 1;
 		}
