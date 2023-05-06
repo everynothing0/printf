@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 00:39:35 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/07 00:43:17 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/07 00:44:30 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,5 @@ void	ft_adress(void *num, int *cnt);
 void	ft_putchar(int c, int *cnt);
 void	ft_hexmaj(unsigned int num, int *cnt);
 void	ft_hexmin(unsigned int num, int *cnt);
+
+#endif
