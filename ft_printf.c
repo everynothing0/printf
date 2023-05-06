@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:55:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/04 23:01:39 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/07 00:38:11 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	ft_conver(va_list args, const char conv)
 
 int	ft_printf(const char *str, ...)
 {
+	int		i;
+	int		leng;
 	va_list	args;
-	int	i;
-	int	leng;
 
 	i = 0;
 	leng = 0;
@@ -60,6 +60,8 @@ int	ft_printf(const char *str, ...)
 			leng += ft_conver(args + str[i + 1]);
 			i += 1;
 		}
+		else
+			ft_putchar(str[i], leng);
 	}
 	va_end(args);
 	return (leng);
