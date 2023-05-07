@@ -6,11 +6,12 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 02:21:42 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/07 23:22:02 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/07 23:27:21 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <limits.h>
 
 void	ft_hexmin(unsigned int num, int *cnt)
 {
@@ -32,6 +33,9 @@ void	ft_hexmin(unsigned int num, int *cnt)
 		num = num / 16;
 		buff[a++] = "0123456789abcdef"[mod];
 	}
+
+	if (num == UINT_MAX / 16)
+		buff[a++] = "0123456789abcdef"[num % 16];
 	while (--a >= 0)
 	{
 		write(1, &buff[a], 1);
@@ -39,7 +43,8 @@ void	ft_hexmin(unsigned int num, int *cnt)
 	}
 }
 
-/*#include <unistd.h>
+#include <unistd.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -72,4 +77,4 @@ int	main(void)
 	write(1, " (ex: error, cnt unchanged)\n", 29);
 
 	return (0);
-}*/
+}
