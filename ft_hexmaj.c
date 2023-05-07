@@ -6,11 +6,12 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 02:06:00 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/06 02:09:52 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/07 23:33:34 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <unistd.h>
 
 void	ft_hexmaj(unsigned int num, int *cnt)
 {
@@ -18,6 +19,8 @@ void	ft_hexmaj(unsigned int num, int *cnt)
 	char	buff[25];
 	int		a;
 
+	if (!cnt)
+		return ;
 	a = 0;
 	if (num == 0)
 	{
@@ -35,4 +38,17 @@ void	ft_hexmaj(unsigned int num, int *cnt)
 		write(1, &buff[a], 1);
 		*cnt += 1;
 	}
+}
+
+int		main(void)
+{
+	unsigned int	num;
+	int				counter;
+
+	num = 305441741;
+	counter = 0;
+	write(1, "Numéro en hexadécimal majuscule : ", 34);
+	ft_hexmaj(num, &counter);
+	write(1, "\n", 1);
+	write(1, "Nombre de caractères affichés : ", 32);
 }
