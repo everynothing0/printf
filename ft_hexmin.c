@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 02:21:42 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/07 23:07:18 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/07 23:22:02 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_hexmin(unsigned int num, int *cnt)
 	if (!cnt)
 		return ;
 	a = 0;
-	if (!num)
+	if (num == 0)
 	{
 		write(1, "0", 1);
 		(*cnt)++;
 	}
-	while (num > 0)
+	while (num != 0)
 	{
 		mod = num % 16;
 		num = num / 16;
@@ -39,7 +39,7 @@ void	ft_hexmin(unsigned int num, int *cnt)
 	}
 }
 
-#include <unistd.h>
+/*#include <unistd.h>
 
 int	main(void)
 {
@@ -49,9 +49,27 @@ int	main(void)
 	num = 305441741;
 	cnt = 0;
 	ft_hexmin(num, &cnt);
-	write(1, "\n", 1);
+	write(1, " (expected: 123abcd)\n", 22);
+
 	num = 400384;
+	cnt = 0;
 	ft_hexmin(num, &cnt);
-	write(1, "\n", 1);
+	write(1, " (expected: 61c00)\n", 19);
+
+	num = 0;
+	cnt = 0;
+	ft_hexmin(num, &cnt);
+	write(1, " (expected: 0)\n", 15);
+
+	num = -1;
+	cnt = 0;
+	ft_hexmin(num, &cnt);
+	write(1, " (expected: nothing, cnt unchanged)\n", 37);
+
+	num = 42;
+	cnt = -1;
+	ft_hexmin(num, &cnt);
+	write(1, " (ex: error, cnt unchanged)\n", 29);
+
 	return (0);
-}
+}*/
