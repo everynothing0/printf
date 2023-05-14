@@ -32,5 +32,5 @@ void	ft_putnbru(unsigned int nb, int *cnt)
 		*cnt += 1;
 		return ;
 	}
-	ft_putnbru(nb, cnt);
+	ft_putnbrtnu(nb, cnt);
 }

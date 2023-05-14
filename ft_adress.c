@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 01:39:11 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/05/06 02:00:57 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/05/08 00:50:38 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_hexadress(unsigned long int num, int *cnt)
 	{
 		mod = num % 16;
 		num = num / 16;
-		buff[a++] = "0123456789abcdf"[mod];
+		buff[a++] = "0123456789abcdef"[mod];
 	}
 	while (--a >= 0)
 	{
